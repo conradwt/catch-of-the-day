@@ -20,6 +20,11 @@ var App = React.createClass({
       order : {}
     }
   },
+  loadSamples : function() {
+    this.setState({
+      fishes : require('./sample-fishes')
+    });
+  },
   addFish : function(fish) {
     var timestamp = (new Date()).getTime();
     // update the state object
@@ -34,7 +39,7 @@ var App = React.createClass({
           <Header tagline="Fresh Seafood Market" />
         </div>
         <Order/>
-        <Inventory/>
+        <Inventory addFish={this.addFish} loadSamples={this.loadSamples}/>
       </div>
     )
   }
@@ -121,6 +126,7 @@ var Inventory = React.createClass({
         <h2>Inventory</h2>
 
         <AddFishForm {...this.props} />
+        <button onClick={this.props.loadSamples}>Load Sample Fishes</button>
       </div>
     )
   }
