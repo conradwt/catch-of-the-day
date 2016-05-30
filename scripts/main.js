@@ -9,9 +9,13 @@ var createBrowserHistory = require('history/lib/createBrowserHistory');
 
 var h = require('./helpers');
 
+// Firebase
+var Rebase = require('re-base');
+var base = Rebase.createClass('https://catch-of-the-day-aafbe.firebaseio.com');
+
 /*
-  App
-*/
+ App
+ */
 
 var App = React.createClass({
   getInitialState : function() {
@@ -19,6 +23,12 @@ var App = React.createClass({
       fishes : {},
       order : {}
     }
+  },
+  componentDidMount : function() {
+    base.syncState(this.props.params.storeId + '/fishes', {
+      context : this,
+      state : 'fishes'
+    });
   },
   addToOrder : function(key) {
     this.state.order[key] = this.state.order[key] + 1 || 1;
@@ -47,7 +57,7 @@ var App = React.createClass({
           <ul className="list-of-fishes">
             {Object.keys(this.state.fishes).map(this.renderFish)}
           </ul>
-        </div>  
+        </div>
         <Order fishes={this.state.fishes} order={this.state.order} />
         <Inventory addFish={this.addFish} loadSamples={this.loadSamples}/>
       </div>
@@ -56,16 +66,16 @@ var App = React.createClass({
 });
 
 /*
-  Fish
-  <Fish />
-*/
+ Fish
+ <Fish />
+ */
 
 var Fish = React.createClass({
   onButtonClick : function() {
     console.log("Going to add the fish: ", this.props.index);
     var key = this.props.index;
     this.props.addToOrder(key);
-  }, 
+  },
   render : function() {
     var details = this.props.details;
     var isAvailable = (details.status === 'available' ? true : false);
@@ -86,9 +96,9 @@ var Fish = React.createClass({
 
 
 /*
-  Add Fish Form
-  <AddFishForm />
-*/
+ Add Fish Form
+ <AddFishForm />
+ */
 
 var AddFishForm = React.createClass({
   createFish : function(event) {
@@ -125,10 +135,9 @@ var AddFishForm = React.createClass({
 });
 
 /*
-  Header
-  <Header/>
-*/
-
+ Header
+ <Header/>
+ */
 var Header = React.createClass({
   render : function() {
     return (
@@ -139,16 +148,16 @@ var Header = React.createClass({
             <span className="the">the</span>
           </span>
           Day</h1>
-        <h3 className="tagline"><span>{this.props.tagline}</span></h3> 
+        <h3 className="tagline"><span>{this.props.tagline}</span></h3>
       </header>
     )
   }
 })
 
 /*
-  Order
-  <Order/>
-*/
+ Order
+ <Order/>
+ */
 
 var Order = React.createClass({
   renderOrder : function(key) {
@@ -168,7 +177,7 @@ var Order = React.createClass({
   },
   render : function() {
     var orderIds = Object.keys(this.props.order);
-    
+
     var total = orderIds.reduce((prevTotal, key)=> {
       var fish = this.props.fishes[key];
       var count = this.props.order[key];
@@ -197,10 +206,9 @@ var Order = React.createClass({
 })
 
 /*
-  Inventory
-  <Inventory/>
-*/
- 
+ Inventory
+ <Inventory/>
+ */
 var Inventory = React.createClass({
   render : function() {
     return (
@@ -214,10 +222,10 @@ var Inventory = React.createClass({
   }
 })
 
-/* 
-  StorePicker
-  This will let us make <StorePicker/>
-*/
+/*
+ StorePicker
+ This will let us make <StorePicker/>
+ */
 
 var StorePicker = React.createClass({
   mixins : [History],
@@ -236,11 +244,12 @@ var StorePicker = React.createClass({
       </form>
     )
   }
+
 });
 
 /*
-  Not Found
-*/
+ Not Found
+ */
 
 var NotFound = React.createClass({
   render : function() {
@@ -248,9 +257,10 @@ var NotFound = React.createClass({
   }
 });
 
+
 /*
-  Routes
-*/
+ Routes
+ */
 
 var routes = (
   <Router history={createBrowserHistory()}>
