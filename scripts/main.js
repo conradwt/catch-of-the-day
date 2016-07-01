@@ -1,14 +1,9 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var CSSTransitionGroup = require('react-addons-css-transition-group');
 
 var ReactRouter = require('react-router');
 var Router  = ReactRouter.Router;
 var Route = ReactRouter.Route;
-<<<<<<< HEAD
-=======
-var Navigation = ReactRouter.Navigation; // mixin
->>>>>>> 09-all-about-react-event-listeners
 var History = ReactRouter.History;
 var createBrowserHistory = require('history/lib/createBrowserHistory');
 
@@ -204,14 +199,10 @@ var Order = React.createClass({
 
     return (
       <li key={key}>
-        <span>
-          <CSSTransitionGroup component="span" transitionName="count" transitionLeaveTimeout={250} transitionEnterTimeout={250} className="count">
-            <span key={count}>{count}</span>
-          </CSSTransitionGroup>
-
-          lbs {fish.name} {removeButton}
-        </span>
+        {count}lbs
+        {fish.name}
         <span className="price">{h.formatPrice(count * fish.price)}</span>
+        {removeButton}
       </li>)
   },
   render : function() {
@@ -232,21 +223,13 @@ var Order = React.createClass({
     return (
       <div className="order-wrap">
         <h2 className="order-title">Your Order</h2>
-
-        <CSSTransitionGroup
-          className="order"
-          component="ul"
-          transitionName="order"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={500}
-        >
+        <ul className="order">
           {orderIds.map(this.renderOrder)}
           <li className="total">
             <strong>Total:</strong>
             {h.formatPrice(total)}
           </li>
-        </CSSTransitionGroup>
-
+        </ul>
       </div>
     )
   }
@@ -299,11 +282,7 @@ var StorePicker = React.createClass({
   mixins : [History],
   goToStore : function(event) {
     event.preventDefault();
-<<<<<<< HEAD
     // get the data from the input
-=======
-    // get data from the input
->>>>>>> 09-all-about-react-event-listeners
     var storeId = this.refs.storeId.value;
     this.history.pushState(null, '/store/' + storeId);
   },
