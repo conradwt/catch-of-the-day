@@ -5,6 +5,10 @@ var CSSTransitionGroup = require('react-addons-css-transition-group');
 var ReactRouter = require('react-router');
 var Router  = ReactRouter.Router;
 var Route = ReactRouter.Route;
+<<<<<<< HEAD
+=======
+var Navigation = ReactRouter.Navigation; // mixin
+>>>>>>> 09-all-about-react-event-listeners
 var History = ReactRouter.History;
 var createBrowserHistory = require('history/lib/createBrowserHistory');
 
@@ -295,7 +299,11 @@ var StorePicker = React.createClass({
   mixins : [History],
   goToStore : function(event) {
     event.preventDefault();
+<<<<<<< HEAD
     // get the data from the input
+=======
+    // get data from the input
+>>>>>>> 09-all-about-react-event-listeners
     var storeId = this.refs.storeId.value;
     this.history.pushState(null, '/store/' + storeId);
   },
