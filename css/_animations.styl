@@ -2,9 +2,8 @@
   Possible Animations:
   enter
   leave
-  appear Must set transitionAppear={true} on animation component 
+  appear Must set transitionAppear={true} on animation component
 */
-
 
 .order-enter
   transition .5s
@@ -32,7 +31,7 @@
   transform translateY(100%) // start it just off screen
   &.count-enter-active
     transform translateY(0)
-    
+
 .count-leave
   transition all 0.25s
   position absolute
@@ -41,6 +40,3 @@
   transform translateY(0)  // start it where it is
   &.count-leave-active
     transform translateY(-100%)  // start it where it is
-    
-    
-  
