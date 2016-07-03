@@ -15,21 +15,7 @@ online fish market where all the features were created using React components.
 
 ```
 Note:  Please see package.json
-
-## Navigate to the Rails application
-
 ```
-$ cd /path/to/rails/application
-```
-
-## Set configuration files
-
-```
-$ cp config/database.yml.template config/database.yml
-$ cp config/initializers/mail.rb.template config/initializers/mail.rb
-```
-
-Note:  You may need to edit the above files as necessary for your system.
 
 ## Create Firebase Account
 
@@ -66,6 +52,12 @@ $ gulp
 
 Note:  This will allow you to make changes to the running application without
        having to restart the server.
+
+## Authentication
+
+  ```
+  TBD
+  ```
 
 ## Production Deployment
 
