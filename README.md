@@ -53,7 +53,7 @@ $ gulp
 Note:  This will allow you to make changes to the running application without
        having to restart the server.
 
-## Authentication
+## Configuring Authentication
 
   ```
   TBD
