@@ -67,7 +67,7 @@ Note:  This will allow you to make changes to the running application without
 
 ## Support
 
-Bug reports and feature requests can be filed with the rest for the Ruby on Rails project here:
+Bug reports and feature requests can be filed against this project here:
 
 * [File Bug Reports and Features](https://github.com/conradwt/catch-of-the-day/issues)
 
