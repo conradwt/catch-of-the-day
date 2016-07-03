@@ -40,8 +40,8 @@ Note:  Please see package.json
    update the following files:
 
    ```
-   /scripts/components/App.js
-   /scripts/components/Inventory.js
+   /path/to/project/scripts/components/App.js
+   /path/to/project/scripts/components/Inventory.js
    ```
 
 ## Starting the local server
