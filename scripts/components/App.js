@@ -10,14 +10,15 @@ import Inventory from './Inventory';
 import Catalyst from 'react-catalyst';
 import reactMixin from 'react-mixin';
 import autobind from 'autobind-decorator';
+import h from '../helpers';
 
 // Firebase
 import Rebase  from 're-base';
-var base = Rebase.createClass('https://catch-of-the-day.firebaseio.com/');
+var base = Rebase.createClass("YOUR-FIREBASE-PROJECT-URL");
 
 @autobind
 class App extends React.Component {
-  
+
   constructor() {
     super();
 
@@ -43,7 +44,7 @@ class App extends React.Component {
     }
 
   }
-  
+
   componentWillUpdate(nextProps, nextState) {
     localStorage.setItem('order-' + this.props.params.storeId, JSON.stringify(nextState.order));
   }
@@ -95,7 +96,7 @@ class App extends React.Component {
           <ul className="list-of-fishes">
             {Object.keys(this.state.fishes).map(this.renderFish)}
           </ul>
-        </div>  
+        </div>
         <Order fishes={this.state.fishes} order={this.state.order} removeFromOrder={this.removeFromOrder} />
         <Inventory addFish={this.addFish} loadSamples={this.loadSamples} fishes={this.state.fishes} linkState={this.linkState.bind(this)} removeFish={this.removeFish} {...this.props}/>
       </div>

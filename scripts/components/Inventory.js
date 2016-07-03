@@ -7,11 +7,13 @@ import React from 'react';
 import AddFishForm from './AddFishForm';
 import autobind from 'autobind-decorator';
 import Firebase from 'firebase';
-const ref = new Firebase('https://catch-of-the-day.firebaseio.com/');
+import h from '../helpers';
+
+const ref = new Firebase("YOUR-FIREBASE-PROJECT-URL");
 
 @autobind
 class Inventory extends React.Component {
-  
+
   constructor() {
     super();
 
@@ -44,7 +46,7 @@ class Inventory extends React.Component {
   authHandler(err, authData) {
     if(err) {
       console.error(err);
-      return; 
+      return;
     }
 
     // save the login token in the browser
@@ -96,7 +98,7 @@ class Inventory extends React.Component {
         <textarea valueLink={linkState('fishes.' + key + '.desc')}></textarea>
         <input type="text" valueLink={linkState('fishes.'+ key +'.image')}/>
         <button onClick={this.props.removeFish.bind(null, key)}>Remove Fish</button>
-        
+
       </div>
     )
   }
