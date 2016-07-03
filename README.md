@@ -14,7 +14,7 @@ online fish market where all the features were created using React components.
 - LocalStorage
 
 ```
-Note:  Please see package.json
+Note:  Please see package.json for additional details regarding dependencies.
 ```
 
 ## Create Firebase Account
