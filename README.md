@@ -15,6 +15,7 @@ online fish market where all the features were created using React components.
 
 ```
 Note:  Please see package.json for additional details regarding dependencies.
+       Also, Firebase 2.3.1 only works with the Firebase legacy platform.
 ```
 
 ## Create Firebase Account
