@@ -56,9 +56,84 @@ Note:  This will allow you to make changes to the running application without
 
 ## Configuring Authentication
 
-  ```
-  TBD
-  ```
+- create a Github application and connect it with Firebase console
+
+  - on Github.com, https://github.com/settings/developers
+
+  - enter `Application name` as
+
+    ```
+    Catch of the Day
+    ```
+
+  - enter `Homepage URL` as
+
+    ```
+    http://localhost:3000
+    ```
+
+  - enter `Application description` as
+
+    ```
+    Catch of the Day
+    ```
+
+  - enter `Authorization callback URL` as
+
+    ```
+    https://auth.firebase.com/v2/catch-of-the-day-cwt/auth/github/callback
+    ```
+
+  - click `Register application`
+
+  - on Firbase.com console, navigate to `Login & Auth`
+
+  - click the `Github` tab
+
+  - enter `GitHub Client ID` and `GitHub Client ID`
+
+- create a Facebook application and connect it with Firebase console
+
+- create a Twitter application and connect it with Firebase console
+
+  - on Twitter.com, https://apps.twitter.com
+
+  - click, `Create New App`
+
+  - enter `Name` as
+
+    ```
+    Catch of the Day
+    ```
+  - enter `Description` as
+
+    ```
+    Catch of the Day
+    ```
+
+  - enter `Website` as
+
+    ```
+    http://localhost:3000
+    ```
+
+  - enter `Callback URL` as
+
+    ```
+    https://auth.firebase.com/v2/catch-of-the-day-cwt/auth/twitter/callback
+    ```
+
+  - accept the `Twitter Developer Agreement` by clicking checkbox
+
+  - click `Create your Twitter application`
+
+  - on Firbase.com console, navigate to `Login & Auth`
+
+  - click the `Twitter` tab
+
+  - click `Enable Twitter Authentication` checkbox
+
+  - enter `Twitter API Key` and `Twitter API Secret`
 
 ## Production Deployment
 
