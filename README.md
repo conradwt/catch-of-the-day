@@ -94,6 +94,48 @@ Note:  This will allow you to make changes to the running application without
 
 - create a Facebook application and connect it with Firebase console
 
+  - on Facebook.com, https://developers.facebook.com/apps/
+
+  - click, `Add a New App`
+
+  - click, `Website`
+
+  - click `Skip and Create App ID`
+
+  - enter `Display Name`
+
+    ```
+    Catch of the Day
+    ```
+
+  - enter contact e-mail address as
+
+    ```
+    YOUR-EMAIL-ADDRESS
+    ```
+
+  - enter `Choose a Category` as
+
+    ```
+    Food & Drink
+    ```
+
+  - click `Create App ID`
+
+  - enter `App Domains` as
+
+    ```
+    http://localhost:3000
+    ```
+
+  - on Firbase.com console, navigate to `Login & Auth`
+
+  - click the `Facebook` tab
+
+  - click `Enable Facebook Authentication` checkbox
+
+  - enter `Facebook App Id` and `Facebook App Secret`
+
 - create a Twitter application and connect it with Firebase console
 
   - on Twitter.com, https://apps.twitter.com
