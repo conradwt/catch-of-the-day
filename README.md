@@ -128,6 +128,16 @@ Note:  This will allow you to make changes to the running application without
     http://localhost:3000
     ```
 
+  - click `Add platform`
+
+  - enter `Site URL` as
+
+    ```
+    http://localhost:3000
+    ```
+
+  - click `Save Changes`
+
   - on Firbase.com console, navigate to `Login & Auth`
 
   - click the `Facebook` tab
