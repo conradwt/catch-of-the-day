@@ -1,7 +1,6 @@
 # Catch of the Day
 
-This is my first React project that I did as part of the [React For Beginners by Wes Bos](https://reactforbeginners.com).  The purpose of this project was to create an
-online fish market where all the features were created using React components.
+This is my first React project that I did as part of the [React For Beginners by Wes Bos](https://reactforbeginners.com).  The purpose of this project was to create an online fish market where all the features were created using React.  Also, it uses Firebase for real-time application persistence and authentication as well as LocalStorage for browser persistence.
 
 ## Getting Started
 
